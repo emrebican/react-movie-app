@@ -85,6 +85,17 @@ $eee: #eee;
     }
 }
 
+.details {
+    background-color: rgba(26, 26, 46, .2);
+    border-radius: 10px;
+    width: 70%;
+    height: 70vh;
+    margin: 8.5% auto 5% auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
 @media screen and (max-width: 750px) {
     .category {
         position: absolute;
@@ -106,7 +117,7 @@ $eee: #eee;
     }
 
     .movie-container {
-        margin-top: 16rem;
+        margin-top: 20rem;
         // overflow-y: hidden;
 
         hr {
@@ -115,6 +126,12 @@ $eee: #eee;
             border: 2px solid $dark-clr;
             border-radius: 5px;
         }
+    }
+
+    .details {
+        flex-direction: column;
+        overflow: hidden;
+        top: 5rem;
     }
 }
 
@@ -151,19 +168,28 @@ header {
     }
 }
 
+.index {
+    display: flex;
+    align-items: flex-end;
+    margin-top: auto;
+    gap: 2rem;
+    text-align: center;
+    height: 70px;
 
-@media only screen and (max-width: 750px) {
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 2rem;
+    small {
+        height: 60px;
+        line-height: 30px;
+        color: $aaa;
+        letter-spacing: 1px;
     }
 
-    header .home-link {
-        margin: 0 auto;
-        background-color: darkred;
+    span {
+        padding: 6px 8px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 4px rgba(26, 26, 46, .6);
+        font-size: 15px;
+        background-color: rgba(26, 26, 46, .8);
+        color: $ddd;
     }
 }
 
@@ -173,33 +199,6 @@ header {
     width: 100%;
     z-index: 20;
     background-color: rgba(26, 26, 46, .9);
-}
-
-.details {
-    background-color: rgba(26, 26, 46, .2);
-    border-radius: 10px;
-    width: 70%;
-    height: 70vh;
-    margin: 8.5% auto 5% auto;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-}
-
-@media screen and (max-width: 1000px) {
-    .details {
-        flex-direction: column;
-        overflow: hidden;
-    }
-
-    .content {
-        margin: 0 auto;
-        min-width: 80%;
-    }
-
-    .index {
-        margin-bottom: 11rem;
-    }
 }
 
 .movie_image {
@@ -236,74 +235,6 @@ header {
         margin-top: 60px;
     }
 
-}
-
-.index {
-    display: flex;
-    align-items: flex-end;
-    margin-top: auto;
-    gap: 2rem;
-    text-align: center;
-    height: 70px;
-
-    small {
-        height: 60px;
-        line-height: 30px;
-        color: $aaa;
-        letter-spacing: 1px;
-    }
-
-    span {
-        padding: 6px 8px;
-        border-radius: 5px;
-        box-shadow: 3px 3px 4px rgba(26, 26, 46, .6);
-        font-size: 15px;
-        background-color: rgba(26, 26, 46, .8);
-        color: $ddd;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .index {
-        display: block;
-        margin-top: -10px;
-        flex-wrap: wrap;
-    }
-
-    .index small {
-        display: block;
-    }
-
-    .details {
-        margin: 18% auto auto;
-        overflow-y: scroll;
-    }
-}
-
-@media screen and (max-width: 1400px) {
-
-    .index {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .5rem;
-        text-align: left;
-        margin-top: 20px;
-        flex-wrap: wrap;
-    }
-
-    .details {
-        margin: 13% auto auto;
-    }
-}
-
-@media screen and (max-width: 1700px) {
-    header {
-        padding: .5rem;
-    }
-
-    .myList {
-        top: 6.25rem;
-    }
 }
 
 .watch-buttons {
@@ -360,4 +291,83 @@ header {
     margin-top: 2.2rem;
     color: $ccc;
     font-size: 18px;
+}
+
+// ------------------------------------------ MEDIAS ------------------------------------------ // 
+@media screen and (max-width: 1700px) {
+    header {
+        padding: .5rem;
+    }
+
+    .myList {
+        top: 6.25rem;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+
+    .index {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+        text-align: left;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .details {
+        margin: 13% auto auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .index {
+        display: block;
+        margin-top: -10px;
+        flex-wrap: wrap;
+    }
+
+    .index small {
+        display: block;
+    }
+
+    .details {
+        margin: 20% auto auto;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .details {
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+
+    .content {
+        margin: 0 auto;
+        min-width: 80%;
+    }
+
+    .index {
+        margin-bottom: 11rem;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 2rem;
+    }
+
+    header .home-link {
+        margin: 0 auto;
+        background-color: darkred;
+    }
+
+    .details {
+        margin-top: 17.2rem;
+    }
 }

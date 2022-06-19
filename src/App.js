@@ -37,7 +37,7 @@ function App() {
     <GlobalProvider>
       <BrowserRouter>
         <header id='myHeader' className={`${onchangeSc(scroll)}`}>
-          <Link to="/react-movie-app" className='home-link'>
+          <Link to="/" className='home-link'>
             <BiMoviePlay />
             <span>MovieList</span>
           </Link>

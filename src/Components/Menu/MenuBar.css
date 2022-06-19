@@ -133,13 +133,13 @@
 @media screen and (max-width: 750px) {
 
     .nav-menu {
-        top: 220px;
+        top: 248px;
     }
 
     .nav-menu.active {
         background-color: rgba(139, 0, 0, 0.671);
         height: 620px;
-        top: 224px;
+        top: 248px;
     }
 
     .nav-links {
