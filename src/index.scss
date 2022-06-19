@@ -89,9 +89,9 @@ $eee: #eee;
     .category {
         position: absolute;
         top: -30px;
-        right: 60%;
-        transform: translateX(-50%);
-        width: 160px;
+        margin-left: 20px;
+        // left: 50%;
+        transform: translateX(-50%, 0%);
     }
 
     .myList {

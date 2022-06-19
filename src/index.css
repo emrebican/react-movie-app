@@ -7,7 +7,7 @@
 
 body {
   background-color: #2D4263;
-  color: #fff;
+  color: white;
   font-family: 'Poppins', sans-serif;
   margin: 0;
 }
@@ -89,10 +89,9 @@ body {
   .category {
     position: absolute;
     top: -30px;
-    right: 60%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 160px;
+    margin-left: 20px;
+    -webkit-transform: translateX(-50%, 0%);
+            transform: translateX(-50%, 0%);
   }
   .myList {
     top: 8rem;
