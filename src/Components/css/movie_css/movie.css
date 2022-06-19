@@ -133,4 +133,10 @@
   font-size: 25px;
   letter-spacing: 1.5px;
 }
+
+@media screen and (max-width: 750px) {
+  .no-movies {
+    margin: 20rem 20%;
+  }
+}
 /*# sourceMappingURL=movie.css.map */

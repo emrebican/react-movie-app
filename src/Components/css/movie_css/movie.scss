@@ -2,7 +2,7 @@
 
 $bgc-dark: #1A1A2E;
 $bgc-light: #2D4263;
-$bgc-info: #DDD;  
+$bgc-info: #DDD;
 $info-text: #1A1A2E;
 
 .movie {
@@ -90,7 +90,7 @@ $info-text: #1A1A2E;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   button {
     background-color: $bgc-dark;
     border: none;
@@ -114,4 +114,10 @@ $info-text: #1A1A2E;
   color: #aaa;
   font-size: 25px;
   letter-spacing: 1.5px;
+}
+
+@media screen and (max-width: 750px) {
+  .no-movies {
+    margin: 20rem 20%;
+  }
 }

@@ -31,7 +31,7 @@ function Search() {
         <form onSubmit={onHandleSubmit}>
             <FiSearch style={{
                 position: 'relative',
-                color: '#ccc',
+                color: '#aaa',
                 top: '2px',
                 left: '30px',
             }} />
