@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ImMenu } from 'react-icons/im';
-import { FaTimes } from 'react-icons/fa';
 import './MenuBar.css';
 
 const MenuBar = () => {
