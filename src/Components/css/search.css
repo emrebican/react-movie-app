@@ -1,0 +1,52 @@
+.search {
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 2px 40px;
+    width: 280px;
+    height: 35px;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 150px;
+    background-color: #2D4263;
+    transition: all ease .5s;
+}
+
+.search:hover {
+    box-shadow: 5px 5px 8px black;
+}
+
+.search:focus-within {
+    width: 500px;
+}
+@media screen and (max-width: 1820px) {
+    .search {
+        margin-right: 50px;
+    }
+    .search:focus-within {
+        width: 280px;
+    }
+}
+@media screen and (max-width: 1700px) {
+    .search:focus-within {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .search:focus-within {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .search {
+        margin: 1.4rem auto;
+        background-color: #ddd;
+        color: black;
+        margin-bottom: 2.5rem;
+    }
+    .search:focus-within {
+        width: 300px;
+    }
+}

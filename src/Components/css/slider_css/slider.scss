@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+$color-dark: #1B2430;
+
+.wrapper {
+    margin: 6rem auto;
+    padding: 2rem 0;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    &::before {
+        position: absolute;
+        top: -10px;
+        bottom: -20px;
+        left: 0px;
+        right: 0px;
+        width: 156.5%;
+        transform: translateX(-25%);
+        content: '';
+        background-color: rgba(26, 26, 46, .1);
+
+    }
+
+    h2 {
+        color: #ccc;
+        font-size: 20px;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .card {
+        width: 240px;
+        height: 400px;
+        overflow: hidden;
+        border-radius: .5rem;
+        position: relative;
+        box-shadow: 5px 0px 8px rgba(0, 0, 0, .8);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        h4 {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            height: 20%;
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(93, 93, 93, 0.5);
+            color: #bbb;
+            z-index: 3;
+
+            transform: translateY(100%);
+            transition: transform ease .5s;
+        }
+    }
+}
+
+.card:hover h4 {
+    transform: translateY(0);
+}
+
+.card::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 2;
+
+    opacity: 0;
+    transition: opacity ease .5s;
+}
+
+.card:hover.card:after {
+    opacity: 10;
+}
+
+.vote {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $color-dark;
+    margin: 10px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 4px solid $color-dark;
+    font-size: 13px;
+    box-shadow: 0 0 10px black;
+}
+
+.vote.green {
+    border-color: rgba(3, 212, 3, 0.7);
+}
+
+.vote.orange {
+    border-color: rgba(255, 153, 0, 0.7);
+}
+
+.vote.red {
+    border-color: rgba(191, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 1055px) {
+    .wrapper {
+        display: none;
+    }
+
+}
