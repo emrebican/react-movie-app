@@ -19,7 +19,7 @@ function Pages() {
   return (
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
-        <Route path='/' element={
+        <Route exact path='/react-movie-app' element={
           <Home />
         } />
         <Route path='/search/:search' element={
