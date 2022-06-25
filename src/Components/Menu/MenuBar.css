@@ -137,7 +137,7 @@
     }
 
     .nav-menu.active {
-        background-color: rgba(139, 0, 0, 0.671);
+        background-color: rgba(26, 26, 46, .7);
         height: 620px;
         top: 248px;
     }

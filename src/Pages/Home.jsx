@@ -42,6 +42,7 @@ function Home() {
     return (
         <>
             <Slider />
+
             <div className="movie-container">
                 {movies.map((movie) => {
 
