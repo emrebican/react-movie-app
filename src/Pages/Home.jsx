@@ -2,24 +2,28 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
+import styled from "styled-components";
 
 import { BsFillPlusSquareFill } from 'react-icons/bs';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
+import { FcNext } from 'react-icons/fc';
+import { FcPrevious } from 'react-icons/fc';
 
 import Movie from "../Components/Movie";
 import Slider from "../Components/Slider";
 
 // Popular Movies
-const FEATURED_API = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+const FEATURED_API = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=`;
 
 function Home() {
 
     // USE-STATE --> Movies
     const [movies, setMovies] = useState([]);
+    const [numPage, setNumPage] = useState(1);
 
     // FETCH MOVIES
     const getMovies = async () => {
-        const moviesRespond = await fetch(FEATURED_API);
+        const moviesRespond = await fetch(FEATURED_API + numPage);
         const moviesData = await moviesRespond.json();
 
         setMovies(moviesData.results);
@@ -29,7 +33,7 @@ function Home() {
     // USE-EFFECT
     useEffect(() => {
         getMovies();
-    }, []);
+    }, [numPage]);
 
 
     // grab action from GlobalContext with useContext
@@ -85,8 +89,88 @@ function Home() {
                     )
                 })}
             </div>
+            <NumPage>
+                <PrevBtn disabled={numPage < 2} onClick={() => setNumPage(numPage - 1)}><FcPrevious /> Prev</PrevBtn>
+                <PageNumber>{numPage}</PageNumber>
+                <NextBtn disabled={numPage > 19} onClick={() => setNumPage(numPage + 1)}>Next <FcNext /></NextBtn>
+            </NumPage>
         </>
     )
 }
 
-export default Home
+export default Home;
+
+const NumPage = styled.div`
+    max-width: 75%;
+    margin: 20px auto;
+    padding: .5em 2em;
+    background-color: rgba(26, 26, 46, .12);
+    border-radius: 5px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+`
+
+const PageNumber = styled.span`
+    width: 30px;
+    border-radius: 5px;
+    color: #1A1A2E;
+    background-color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+`
+
+const PrevBtn = styled.button`
+    border: none;
+    color: white;
+    background-color: #1A1A2E;
+    padding: 5px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all ease .1s;
+
+    /* &:active {
+        background-color: #fff;
+        color: #1A1A2E;
+        font-weight: bold;
+        box-shadow: 2px 6px 10px #1A1A2E;
+    } */
+
+    &:disabled {
+        background-color: #414169;
+        color: #aaa;
+        cursor: unset;
+    }
+`
+
+const NextBtn = styled.button`
+    border: none;
+    color: white;
+    background-color: #1A1A2E;
+    padding: 5px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all ease .1s;
+
+    /* &:active {
+        background-color: #fff;
+        color: #1A1A2E;
+        font-weight: bold;
+        box-shadow: 2px 6px 10px #1A1A2E;
+    } */
+
+    &:disabled {
+        background-color: #414169;
+        color: #aaa;
+        cursor: unset;
+    }
+`
