@@ -90,9 +90,9 @@ function Home() {
                 })}
             </div>
             <NumPage>
-                <PrevBtn disabled={numPage < 2} onClick={() => setNumPage(numPage - 1)}><FcPrevious /> Prev </PrevBtn>
+                <PrevBtn disabled={numPage < 2} onClick={() => setNumPage(numPage - 1)}><FcPrevious /> Prev</PrevBtn>
                 <PageNumber>{numPage}</PageNumber>
-                <NextBtn disabled={numPage > 19} onClick={() => setNumPage(numPage + 1)}> Next <FcNext /></NextBtn>
+                <NextBtn disabled={numPage > 19} onClick={() => setNumPage(numPage + 1)}>Next <FcNext /></NextBtn>
             </NumPage>
         </>
     )
