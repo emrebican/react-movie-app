@@ -1,6 +1,6 @@
 ## React Movie App
 
-https://emrebican.github.io/react-movie-app/
+https://reactmovielistapp.netlify.app/
 
 # Getting Started with Create React App
 
